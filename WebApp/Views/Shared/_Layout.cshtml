@@ -8,64 +8,90 @@
     <meta name="description" content="LogicalPanda: A collection of mini projects by Gerard Corr">
     <meta name="author" content="LogicalPanda">
     <title>LogicalPanda</title>
-    @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/FontAwesome/font-awesome.min.css")
     @Scripts.Render("~/bundles/modernizr")
+
+
 </head>
 <body>
-    <div id="wrapper" class="">
-        <!-- Sidebar -->
-        <div id="sidebar-main-wrapper" class="">
-            <ul class="sidebar-main-nav">
-                <li>
-                    <a href="#menu-toggle" id="menu-toggle"><img src="~/Content/Images/white-menu.png" id="menu-button" class=""></a>
-                </li>
-            </ul>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Logical Panda</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Apps
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">GeoShare</a></li>
+                            <li><a href="#">Game</a></li>
+                            <li><a href="#">Football App</a></li>
+                            <li><a href="#">Kanban</a></li>
+                            <li><a href="#">Leaderboards</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
         </div>
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li>
-                    @Html.ActionLink("About", "About", "Home")
-                </li>
-                <li>
-                    @Html.ActionLink("Leaderboards", "Index", "Leaderboard")
-                </li>
-                <li>
-                    @Html.ActionLink("Posts", "Index", "Post")
-                </li>
-                <li>
-                    @Html.ActionLink("Kanban", "Kanban", "Home")
-                </li>
-                <li>
-                    @Html.ActionLink("Game", "Game", "Home")
-                </li>
-                    @Html.Partial("_LoginPartial")
-            </ul>
+    </nav>
+
+    <!--
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">Logical Panda</div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Leaderboards</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">FootballApp</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Game</a></li>
+                    <li><a href="#">GeoShare</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
         </div>
-        <div id="content-wrapper" class="">
+    </nav>
+        -->
+
                         @RenderBody()
-        </div>
-        <div id="logo" class="">
-            <img src="~/Content/Images/panda.png">
-        </div>
-        <!-- /#page-content-wrapper -->
-    </div>
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    $("#downloads-toggle").click(function (e) {
-        e.preventDefault();
-        $("#download-links").css("display", "block");
-    });
-    </script>
 
 </body>
 </html>

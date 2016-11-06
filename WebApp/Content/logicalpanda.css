@@ -1,0 +1,109 @@
+
+
+
+/*
+    BOOTSTRAP Overrides
+*/
+
+body {
+        background-color: #EDEDED;
+}
+
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12{
+    padding: 0px;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.navbar {
+    border-bottom: 0px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    min-height: 100px;
+    background-color: white;
+    border-color: white;
+}
+
+
+
+.container-fluid{
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+
+
+
+
+
+
+
+
+
+
+a{
+    color: black;
+}
+
+
+
+.cell{
+    position:relative;
+    overflow:hidden;
+    padding-bottom:100%;
+    text-align:center;
+    margin: 1px;
+}
+.cell img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+}
+
+.cell .text{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+}
+
+.cell-link{
+    background-color: white;
+    color: black;
+}
+
+.img-responsive {
+    min-width: 102%;
+}
+
+
+.wide-cell{
+        padding-bottom: 50%;
+}
+
+.long-cell{
+        padding-bottom: 200%;
+}
+
+
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+
+.darken:hover{
+    opacity: 0.7;
+    background-color: lightgrey;
+    -webkit-transition: all 0.3s linear;
+       -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+         -o-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+}
