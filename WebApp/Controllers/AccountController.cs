@@ -169,12 +169,7 @@ namespace WebApp.Controllers
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(authDb));
-                    //need to change this. Managed by another app?
-                    if (model.Email == "gercorr@gmail.com")
-                    {
-                        var roleResult = RoleManager.Create(new IdentityRole("Admin"));
-                        UserManager.AddToRole(user.Id, "Admin");
-                    }
+
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
