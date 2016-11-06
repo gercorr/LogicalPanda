@@ -8,11 +8,8 @@
     <meta name="description" content="LogicalPanda: A collection of mini projects by Gerard Corr">
     <meta name="author" content="LogicalPanda">
     <title>LogicalPanda</title>
-        @Styles.Render("~/Content/css")
-        @Styles.Render("~/Content/FontAwesome/font-awesome.min.css")
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-
 </head>
 <body>
 
@@ -41,17 +38,17 @@
                             <li>@Html.ActionLink("Kanban", "Kanban", "Home")</li>
                             <li>@Html.ActionLink("Leaderboards", "Index", "Leaderboard")</li>
                         </ul>
-                    </li>
+                </li>
                     <li>@Html.ActionLink("News", "News", "Home")</li>
                     <li>@Html.ActionLink("Posts", "Index", "Post")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @Html.Partial("_LoginPartial")
                     
                 </ul>
-            </div>
+        </div>
         </div>
     </nav>
                         @RenderBody()
