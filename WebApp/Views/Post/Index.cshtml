@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApp.Models.Post> 
+
+@{
+    ViewBag.Title = "Posts";
+}
+<div id="about-splash"></div>
+<div id="content">
+    <h2>Posts!</h2>
+
+    <table class="posts">
+        <tr>
+            <th class="date-column"><div class="content">@Html.DisplayNameFor(model => model.Date)</div></th>
+            <th class="content-column"><div class="content">@Html.DisplayNameFor(model => model.UserDetail.UserName)</div></th>
+            <th class="content-column"><div class="content">@Html.DisplayNameFor(model => model.Content)</div></th>
+            <th class="actions-column"><div class="content">Actions</div></th>
+        </tr>
+
+
+        @foreach (var item in Model.OrderByDescending(i => i.Date))
+        {
+            <tr>
+                <td><div class="content">@Html.DisplayFor(modelItem => item.Date)</div></td>
+                <td><div class="content">@Html.DisplayFor(modelItem => item.UserDetail.UserName)</div></td>
+                <td><div class="content">@Html.DisplayFor(modelItem => item.Content)</div></td>
+                <td>
+                    <div class="content">
+                    @*need to change this! Use view model. Need to allow users to edit own posts*@
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", "Post", new { id = item.Id }, new { })
+                        @Html.ActionLink("Delete", "Delete", "Post", new { id = item.Id }, new { })
+                    }
+                    @Html.ActionLink("Details", "Details", "Post", new { id = item.Id }, new { })
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <p class="posts">
+        @Html.ActionLink("Create New", "Create", "Post")
+    </p>
+
+</div>

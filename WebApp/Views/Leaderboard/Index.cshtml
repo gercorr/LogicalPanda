@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApp.Models.Leaderboard>
+
+@{
+    ViewBag.Title = "Leaderboard";
+}
+<div id="about-splash"></div>
+<div id="content">
+    <h2>Leaderboards!</h2>
+
+    <table class="posts">
+        <tr>
+            <th class="date-column"><div class="content">@Html.DisplayNameFor(model => model.Created)</div></th>
+            <th class="content-column"><div class="content">@Html.DisplayNameFor(model => model.CreatedBy.UserName)</div></th>
+            <th class="content-column"><div class="content">@Html.DisplayNameFor(model => model.Game)</div></th>
+            <th class="actions-column"><div class="content">Actions</div></th>
+        </tr>
+
+
+        @foreach (var item in Model.OrderByDescending(i => i.Created))
+        {
+            <tr>
+                <td><div class="content">@Html.DisplayFor(modelItem => item.Created)</div></td>
+                <td><div class="content">@Html.DisplayFor(modelItem => item.CreatedBy.UserName)</div></td>
+                <td><div class="content">@Html.DisplayFor(modelItem => item.Game)</div></td>
+                <td>
+                    <div class="content">
+                        @Html.ActionLink("View Scores", "Details", "Leaderboard", new { id = item.Id }, new { })
+                        @*need to change this! Use view model*@
+                       @if (this.User.IsInRole("Admin"))
+                       { 
+                            @Html.ActionLink("Delete", "Delete", "Leaderboard", new { id = item.Id }, new { })
+                       }
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <p class="posts">
+        @Html.ActionLink("Create New Leaderboard", "Create", "Leaderboard")
+    </p>
+
+</div>

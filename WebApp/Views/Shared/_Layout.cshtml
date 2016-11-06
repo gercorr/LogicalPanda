@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en" height="100%">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="LogicalPanda: A collection of mini projects by Gerard Corr">
+    <meta name="author" content="LogicalPanda">
+    <title>LogicalPanda</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="wrapper" class="">
+        <!-- Sidebar -->
+        <div id="sidebar-main-wrapper" class="">
+            <ul class="sidebar-main-nav">
+                <li>
+                    <a href="#menu-toggle" id="menu-toggle"><img src="~/Content/Images/white-menu.png" id="menu-button" class=""></a>
+                </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("About", "About", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Leaderboards", "Index", "Leaderboard")
+                </li>
+                <li>
+                    @Html.ActionLink("Posts", "Index", "Post")
+                </li>
+                <li>
+                    @Html.ActionLink("Kanban", "Kanban", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Game", "Game", "Home")
+                </li>
+                    @Html.Partial("_LoginPartial")
+            </ul>
+        </div>
+        <div id="content-wrapper" class="">
+                        @RenderBody()
+        </div>
+        <div id="logo" class="">
+            <img src="~/Content/Images/panda.png">
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $("#downloads-toggle").click(function (e) {
+        e.preventDefault();
+        $("#download-links").css("display", "block");
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model WebApp.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div id="about-splash"></div>
+<div id="content">
+    <h2>Details</h2>
+
+    <fieldset>
+        <legend>Post</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Date)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Date)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Title)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Content)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Content)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+
+</div>

@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Game";
+}
+<script src="~/Content/GameFiles/TemplateData/UnityProgress.js"></script>
+
+<div id="about-splash"></div>
+<div id="content">
+    <h2>Game!</h2>   
+    
+    This game was developed using Unity with the models and animations created using Blender. The game logic/scripting was done with c#
+    <br />
+    <br />
+    <div id="gamebox-wrapper">
+        <div id="gamebox">
+            <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
+            <br>
+            <div class="fullscreen"><img src="~/Content/GameFiles/TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+    <h2>Controls</h2>
+
+    <table class="posts">
+        <tr>
+            <th class="content-column"><div class="content">Key</div></th>
+            <th class="actions-column"><div class="content">Action</div></th>
+        </tr>
+        <tr>
+            <td><div class="content">A,S,D,F</div></td>
+            <td><div class="content">Move Character</div></td>
+        </tr>
+        <tr>
+            <td><div class="content">D-Pad (Left, Right, Up, Down keys)</div></td>
+            <td><div class="content">Character will face that direction</div></td>
+        </tr>
+        <tr>
+            <td><div class="content">Spacebar</div></td>
+            <td><div class="content">Attack</div></td>
+        </tr>
+        <tr>
+            <td><div class="content">Left Shift</div></td>
+            <td><div class="content">Sprint</div></td>
+        </tr>
+        <tr>
+            <td><div class="content">Right Ctrl</div></td>
+            <td><div class="content">Roll</div></td>
+        </tr>
+        <tr>
+            <td><div class="content">Right Shift</div></td>
+            <td><div class="content">Block</div></td>
+        </tr>
+    </table>
+
+
+
+
+
+    <h2>Download</h2>
+    <a href="~/Content/Downloads/game_0_000005.zip">Download Game</a>: Version 0.000005. PC only.<br />
+    <a href="~/Content/Downloads/game_0_000001.zip">Download Game</a>: Version 0.000001. PC only. Controller Required<br />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*Game Scripts*@
+    <script type='text/javascript'>
+        var Module = {
+            TOTAL_MEMORY: 268435456,
+            errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+            compatibilitycheck: null,
+            dataUrl: "../Content/GameFiles/Release/webGL.data",
+            codeUrl: "../Content/GameFiles/Release/webGL.js",
+            memUrl: "../Content/GameFiles/Release/webGL.mem",
+        };
+    </script>
+    <script src="~/Content/GameFiles/Release/UnityLoader.js"></script>
