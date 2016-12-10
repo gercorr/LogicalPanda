@@ -2,24 +2,46 @@
     ViewBag.Title = "Kanban";
 }
 
-<div id="about-splash"></div>
-<div id="content">
-    <h2>Kanban!</h2>
 
-    This kanban board was developed using node.js with express, mongoDb, and a frontend using js/jQuery.
-    <br />
-    This is just an iframe, the site is hosted on azure: <a href="http://gercorr.westeurope.cloudapp.azure.com:8080/">http://gercorr.westeurope.cloudapp.azure.com:8080/</a>
-    <br />
-    The code is hosted on github: <a href="https://github.com/gercorr/nodejs_express">https://github.com/gercorr/nodejs_express</a>
-    <br />
-    <br />
-    <iframe src="http://gercorr.westeurope.cloudapp.azure.com:8080/" width="100%" height="600px"></iframe>
-    <br />
-    <br />
-    The tasks can be dragged into tasks (sub tasks!) or into 
+<div class="container-fluid text-center" id="logicalpandagrid">
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-1">
+            <div class="cell darken">
+                <div class="icon-or-title"><i class="fa fa-tasks" style="font-size:48px;"></i><br />Kanban</div>
+            </div>
+        </div>
 
+        <div class="col-sm-4">
+            <div class="cell cell-2-1">
+                <div class="icon-or-title"><h2>Kanban!</h2></div>
+            </div>
+        </div>
 
+        <div class="col-sm-4">
+            <div class="cell cell-2-1">
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="cell cell-5-1">
+                <div class="icon-or-title">
+                    This kanban board was developed using node.js with express, mongoDb, and a frontend using js/jQuery.
+                    <br />
+                    This is just an iframe, the site is hosted on azure: <a href="http://gercorr.westeurope.cloudapp.azure.com:8080/">http://gercorr.westeurope.cloudapp.azure.com:8080/</a>
+                    <br />
+                    The code is hosted on github: <a href="https://github.com/gercorr/nodejs_express">https://github.com/gercorr/nodejs_express</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+                <iframe src="http://gercorr.westeurope.cloudapp.azure.com:8080/" width="100%" height="600px"></iframe>
+        </div>
+    </div>
 
 </div>
 

@@ -3,42 +3,83 @@
 @{
     ViewBag.Title = "Posts";
 }
-<div id="about-splash"></div>
-<div id="content">
-    <h2>Posts!</h2>
-
-    <table class="posts">
-        <tr>
-            <th class="date-column"><div class="content">@Html.DisplayNameFor(model => model.Date)</div></th>
-            <th class="content-column"><div class="content">@Html.DisplayNameFor(model => model.UserDetail.UserName)</div></th>
-            <th class="content-column"><div class="content">@Html.DisplayNameFor(model => model.Content)</div></th>
-            <th class="actions-column"><div class="content">Actions</div></th>
-        </tr>
 
 
-        @foreach (var item in Model.OrderByDescending(i => i.Date))
-        {
-            <tr>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.Date)</div></td>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.UserDetail.UserName)</div></td>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.Content)</div></td>
-                <td>
-                    <div class="content">
-                    @*need to change this! Use view model. Need to allow users to edit own posts*@
-                    @if (this.User.IsInRole("Admin"))
-                    {
-                        @Html.ActionLink("Edit", "Edit", "Post", new { id = item.Id }, new { })
-                        @Html.ActionLink("Delete", "Delete", "Post", new { id = item.Id }, new { })
-                    }
-                    @Html.ActionLink("Details", "Details", "Post", new { id = item.Id }, new { })
+<div class="container-fluid text-center" id="logicalpandagrid">
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-1">
+            <div class="cell darken">
+                <a href="@Url.Action("Index", "Post")"><div class="icon-or-title"><i class="fa fa-comments" style="font-size:48px;"></i><br />Posts</div></a>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="cell cell-2-1">
+                <div class="icon-or-title"><h2>Posts!</h2></div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="cell cell-2-1">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="cell cell-5-1 cell-with-content">
+
+                <div class="row">
+                    <div class="col-xs-3">
+                        @Html.DisplayNameFor(model => model.Date)
                     </div>
-                </td>
-            </tr>
-        }
-    </table>
-    <br />
-    <p class="posts">
-        @Html.ActionLink("Create New", "Create", "Post")
-    </p>
+                    <div class="col-xs-3">
+                        @Html.DisplayNameFor(model => model.UserDetail.UserName)
+                    </div>
+                    <div class="col-xs-3">
+                        @Html.DisplayNameFor(model => model.Content)
+                    </div>
+                    <div class="col-xs-3">
+                        Actions
+                    </div>
+                </div>
+
+                @foreach (var item in Model.OrderByDescending(i => i.Date))
+                {
+
+                    <div class="row">
+                        <div class="col-xs-3">
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </div>
+                        <div class="col-xs-3">
+                            @Html.DisplayFor(modelItem => item.UserDetail.UserName)
+                        </div>
+                        <div class="col-xs-3">
+                            @Html.DisplayFor(modelItem => item.Content)
+                        </div>
+                        <div class="col-xs-3">
+                            @*need to change this! Use view model. Need to allow users to edit own posts*@
+                            @if (this.User.IsInRole("Admin"))
+                            {
+                                @Html.ActionLink("Edit", "Edit", "Post", new { id = item.Id }, new { })
+                                @Html.ActionLink("Delete", "Delete", "Post", new { id = item.Id }, new { })
+                            }
+                            @Html.ActionLink("Details", "Details", "Post", new { id = item.Id }, new { })
+                        </div>
+                    </div>
+                }
+
+
+                <div class="row">
+                    <div class="col-xs-2 col-xs-offset-2">
+                        @Html.ActionLink("Create New", "Create", "Post")
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
 
 </div>

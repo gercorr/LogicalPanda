@@ -29,6 +29,35 @@ namespace WebApp.Controllers
             return View();
         }
 
+        public ActionResult News()
+        {
+            ViewBag.Message = "News.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Contact.";
+
+            return View();
+        }
+
+        public ActionResult FootballApp()
+        {
+            ViewBag.Message = "FootballApp.";
+
+            return View();
+        }
+
+        public ActionResult GeoShare()
+        {
+            ViewBag.Message = "GeoShare.";
+
+            return View();
+        }
+
+
         public ActionResult Kanban()
         {
             ViewBag.Message = "Kanban.";
