@@ -11,8 +11,7 @@ body {
 
 .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12{
     padding: 0px;
-    min-height: 100px;
-    min-width: 100px;
+
 }
 
 .row {
@@ -41,11 +40,6 @@ body {
 
 
 
-
-
-
-
-
 a{
     color: black;
 }
@@ -58,6 +52,7 @@ a{
     padding-bottom:100%;
     text-align:center;
     margin: 1px;
+    background-color: white;
 }
 .cell img{
       position: absolute;
@@ -66,15 +61,10 @@ a{
       transform: translateX(-50%) translateY(-50%);
 }
 
-.cell .text{
+.cell .icon-or-title{
     position: absolute;
     width: 100%;
     top: 30%;
-}
-
-.cell-link{
-    background-color: white;
-    color: black;
 }
 
 .img-responsive {
@@ -82,14 +72,20 @@ a{
 }
 
 
-.wide-cell{
+.cell-2-1{
         padding-bottom: 50%;
 }
 
-.long-cell{
-        padding-bottom: 200%;
+.cell-5-1{
+        padding-bottom: 20%;
 }
 
+.cell-2-2{
+        padding-bottom: 200%;
+}
+.cell-with-content{
+        padding-bottom: 5%;
+}
 
 
 a:visited {

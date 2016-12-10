@@ -389,6 +389,10 @@
     <Content Include="Views\Leaderboard\CreateRecord.cshtml" />
     <Content Include="Views\Leaderboard\Delete.cshtml" />
     <Content Include="Views\Home\Kanban.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\FootballApp.cshtml" />
+    <Content Include="Views\Home\GeoShare.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

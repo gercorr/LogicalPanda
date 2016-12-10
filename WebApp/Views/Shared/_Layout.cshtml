@@ -24,67 +24,36 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Logical Panda</a>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">Logical Panda</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Apps
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">GeoShare</a></li>
-                            <li><a href="#">Game</a></li>
-                            <li><a href="#">Football App</a></li>
-                            <li><a href="#">Kanban</a></li>
-                            <li><a href="#">Leaderboards</a></li>
+                            <li>@Html.ActionLink("GeoShare", "GeoShare", "Home")</li>
+                            <li>@Html.ActionLink("Game", "Game", "Home")</li>
+                            <li>@Html.ActionLink("Football App", "FootballApp", "Home")</li>
+                            <li>@Html.ActionLink("Kanban", "Kanban", "Home")</li>
+                            <li>@Html.ActionLink("Leaderboards", "Index", "Leaderboard")</li>
                         </ul>
                     </li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Forum</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>@Html.ActionLink("News", "News", "Home")</li>
+                    <li>@Html.ActionLink("Posts", "Index", "Post")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    @Html.Partial("_LoginPartial")
+                    
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!--
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="navbar-brand">Logical Panda</div>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Leaderboards</a></li>
-                    <li><a href="#">Forum</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">FootballApp</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Game</a></li>
-                    <li><a href="#">GeoShare</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-        -->
-
                         @RenderBody()
 
 
