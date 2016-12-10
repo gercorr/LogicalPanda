@@ -4,61 +4,62 @@
     ViewBag.Title = "Details";
 }
 
-<div id="about-splash"></div>
-<div id="content">
-    <h2>@Html.DisplayFor(model => model.Game)</h2>
 
-    @*<fieldset>
-        <legend>@Html.DisplayFor(model => model.Game)</legend>
 
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Created)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Created)
-        </div>
+<div class="container-fluid text-center" id="logicalpandagrid">
 
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Game)
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-2">
+            <h2>@Html.DisplayFor(model => model.Game)</h2>
         </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Game)
-        </div>
+    </div>
 
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.CreatedBy.UserName)
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-2">
+            @Html.DisplayNameFor(model => model.LeaderboardRecords.FirstOrDefault().RecordCreated)
         </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.CreatedBy.UserName)
+        <div class="col-xs-2">
+            @Html.DisplayNameFor(model => model.LeaderboardRecords.FirstOrDefault().RecordHolder)
         </div>
-    </fieldset>*@
-    <p>
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+        <div class="col-xs-2">
+            @Html.DisplayNameFor(model => model.LeaderboardRecords.FirstOrDefault().Score)
+        </div>
+        <div class="col-xs-2">
+            Actions
+        </div>
+    </div>
+
+    @foreach (var item in Model.LeaderboardRecords.OrderByDescending(i => i.Score))
+    {
+
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-2">
+                @Html.DisplayFor(modelItem => item.RecordCreated)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(modelItem => item.RecordHolder.UserName)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(modelItem => item.Score)
+            </div>
+        </div>
+    }
     <br />
 
-    <table class="posts">
-        <tr>
-            <th class="date-column"><div class="content">Recorded</div></th>
-            <th class="content-column"><div class="content">Record Holder</div></th>
-            <th class="content-column"><div class="content">Score</div></th>
-        </tr>
-
-
-        @foreach (var item in Model.LeaderboardRecords.OrderByDescending(i => i.Score))
-        {
-            <tr>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.RecordCreated)</div></td>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.RecordHolder.UserName)</div></td>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.Score)</div></td>
-            </tr>
-        }
-    </table>
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-2">
+            @Html.ActionLink("Add New Record!", "CreateRecord", "Leaderboard", new { leaderBoardId = Model.Id }, null)
+        </div>
+    </div>
 
     <br />
-    <p class="posts">
-        @Html.ActionLink("Add New Record!", "CreateRecord", "Leaderboard", new { leaderBoardId = Model.Id }, null)
-    </p>
-
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-2">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
 
 </div>
+
+
+

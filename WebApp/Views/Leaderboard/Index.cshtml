@@ -3,41 +3,82 @@
 @{
     ViewBag.Title = "Leaderboard";
 }
-<div id="about-splash"></div>
-<div id="content">
-    <h2>Leaderboards!</h2>
+<div class="container-fluid text-center" id="logicalpandagrid">
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-1">
+            <div class="cell darken">
+                <a href="@Url.Action("Index", "Leaderboard")"><div class="icon-or-title"><i class="fa fa-list" style="font-size:48px;"></i><br />Leaderboards</div></a>
+            </div>
+        </div>
 
-    <table class="posts">
-        <tr>
-            <th class="date-column"><div class="content">@Html.DisplayNameFor(model => model.Created)</div></th>
-            <th class="content-column"><div class="content">@Html.DisplayNameFor(model => model.CreatedBy.UserName)</div></th>
-            <th class="content-column"><div class="content">@Html.DisplayNameFor(model => model.Game)</div></th>
-            <th class="actions-column"><div class="content">Actions</div></th>
-        </tr>
+        <div class="col-sm-4">
+            <div class="cell cell-2-1">
+                <div class="icon-or-title"><h2>Leaderboards!</h2></div>
+            </div>
+        </div>
 
+        <div class="col-sm-4">
+            <div class="cell cell-2-1">
+            </div>
+        </div>
+    </div>
 
-        @foreach (var item in Model.OrderByDescending(i => i.Created))
-        {
-            <tr>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.Created)</div></td>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.CreatedBy.UserName)</div></td>
-                <td><div class="content">@Html.DisplayFor(modelItem => item.Game)</div></td>
-                <td>
-                    <div class="content">
-                        @Html.ActionLink("View Scores", "Details", "Leaderboard", new { id = item.Id }, new { })
-                        @*need to change this! Use view model*@
-                       @if (this.User.IsInRole("Admin"))
-                       { 
-                            @Html.ActionLink("Delete", "Delete", "Leaderboard", new { id = item.Id }, new { })
-                       }
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="cell cell-5-1 cell-with-content">
+
+                <div class="row">
+                    <div class="col-xs-3">
+                        @Html.DisplayNameFor(model => model.Created)
                     </div>
-                </td>
-            </tr>
-        }
-    </table>
-    <br />
-    <p class="posts">
-        @Html.ActionLink("Create New Leaderboard", "Create", "Leaderboard")
-    </p>
+                    <div class="col-xs-3">
+                        @Html.DisplayNameFor(model => model.CreatedBy.UserName)
+                    </div>
+                    <div class="col-xs-3">
+                        @Html.DisplayNameFor(model => model.Game)
+                    </div>
+                    <div class="col-xs-3">
+                        Actions
+                    </div>
+                </div>
+
+                @foreach (var item in Model.OrderByDescending(i => i.Created))
+                {
+
+                    <div class="row">
+                        <div class="col-xs-3">
+                            @Html.DisplayFor(modelItem => item.Created)
+                        </div>
+                        <div class="col-xs-3">
+                            @Html.DisplayFor(modelItem => item.CreatedBy.UserName)
+                        </div>
+                        <div class="col-xs-3">
+                            @Html.DisplayFor(modelItem => item.Game)
+                        </div>
+                        <div class="col-xs-3">
+                            @*need to change this! Use view model. Need to allow users to edit own posts*@
+
+                            @Html.ActionLink("View Scores", "Details", "Leaderboard", new { id = item.Id }, new { })
+                            @*need to change this! Use view model*@
+                            @if (this.User.IsInRole("Admin"))
+                            {
+                                @Html.ActionLink("Delete", "Delete", "Leaderboard", new { id = item.Id }, new { })
+                            }
+                        </div>
+                    </div>
+                }
+
+
+                <div class="row">
+                    <div class="col-xs-3 col-xs-offset-2">
+                        @Html.ActionLink("Create New Leaderboard", "Create", "Leaderboard")
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
 
 </div>

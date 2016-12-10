@@ -9,43 +9,43 @@
                 <div class="row">
                     <div class="col-sm-4 col-xs-4">
                         <div class="cell darken">
-                            <a href=""> <img src="~/Content/Images/panda-grid.png" class="img-responsive full-width"></a>
+                            <a href="@Url.Action("Index", "Home")"> <img src="~/Content/Images/panda-grid.png" class="img-responsive full-width"></a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">                            
-                            <a href=""><div class="text"><i class="fa fa-info-circle" style="font-size:48px;"></i> <br />About</div></a>
+                        <div class="cell darken">                            
+                            <a href="@Url.Action("About", "Home")"><div class="icon-or-title"><i class="fa fa-info-circle" style="font-size:48px;"></i> <br />About</div></a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">
-                            <a href=""><div class="text"><i class="fa fa-sign-in" style="font-size:48px;"></i><br />Login</div></a>
+                        <div class="cell darken">
+                            <a href="@Url.Action("Login", "Account")"><div class="icon-or-title"><i class="fa fa-sign-in" style="font-size:48px;"></i><br />Login</div></a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">
-                            <a href=""><div class="text"><i class="fa fa-list" style="font-size:48px;"></i><br />Leaderboards</div></a>
+                        <div class="cell darken">
+                            <a href="@Url.Action("Index", "Leaderboard")"><div class="icon-or-title"><i class="fa fa-list" style="font-size:48px;"></i><br />Leaderboards</div></a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">
-                            <a href=""><div class="text"><i class="fa fa-comments" style="font-size:48px;"></i><br />Forum</div></a>
+                        <div class="cell darken">
+                            <a href="@Url.Action("Index", "Post")"><div class="icon-or-title"><i class="fa fa-comments" style="font-size:48px;"></i><br />Posts</div></a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">
-                            <a href="https://github.com/gercorr"><div class="text"><i class="fa fa-github" style="font-size:48px;"></i> <br />GitHub</div></a>
+                        <div class="cell darken">
+                            <a href="https://github.com/gercorr"><div class="icon-or-title"><i class="fa fa-github" style="font-size:48px;"></i> <br />GitHub</div></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
                 <div class="cell darken">
-                    <a href=""> 
+                    <a href="@Url.Action("Game", "Home")"> 
                         <img src="~/Content/Images/game-square.png" class="img-responsive full-width">
-                        <div class="text"><i class="fa fa-gamepad" style="font-size:48px;"></i><br />Game</div>
+                        <div class="icon-or-title"><i class="fa fa-gamepad" style="font-size:48px;"></i><br />Game</div>
                     </a>
                 </div>
             </div>
@@ -54,10 +54,10 @@
         <div class="row">
 
             <div class="col-sm-4 col-xs-12 col-sm-offset-1">
-                <div class="cell cell-link darken">
-                    <a href="">
+                <div class="cell darken">
+                    <a href="@Url.Action("GeoShare", "Home")">
                         <img src="~/Content/Images/map2.png" class="img-responsive full-width">
-                        <div class="text"><i class="fa fa-map-marker" style="font-size:48px;"></i><br />GeoShare</div>
+                        <div class="icon-or-title"><i class="fa fa-map-marker" style="font-size:48px;"></i><br />GeoShare</div>
                     </a>
                 </div>
             </div>
@@ -65,32 +65,32 @@
             <div class="col-sm-6 ">
                 <div class="row">
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">
-                            <a href=""><div class="text"><i class="fa fa-newspaper-o" style="font-size:48px;"></i><br />News</div></a>
+                        <div class="cell darken">
+                            <a href="@Url.Action("News", "Home")"><div class="icon-or-title"><i class="fa fa-newspaper-o" style="font-size:48px;"></i><br />News</div></a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">
-                            <a href=""><div class="text"><i class="fa fa-soccer-ball-o" style="font-size:48px;"></i><br />Football App</div></a>
+                        <div class="cell darken">
+                            <a href="@Url.Action("FootballApp", "Home")"><div class="icon-or-title"><i class="fa fa-soccer-ball-o" style="font-size:48px;"></i><br />Football App</div></a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">
-                            <a href=""><div class="text"><i class="fa fa-id-card" style="font-size:48px;"></i> <br />Contact</div></a>
+                        <div class="cell darken">
+                            <a href="@Url.Action("Contact", "Home")"><div class="icon-or-title"><i class="fa fa-id-card" style="font-size:48px;"></i> <br />Contact</div></a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-xs-4">
-                        <div class="cell cell-link darken">
-                            <a href=""><div class="text"><i class="fa fa-linkedin-square" style="font-size:48px;"></i><br />LinkedIn</div></a>
+                        <div class="cell darken">
+                            <a href="https://www.linkedin.com/in/ger-corr-87b08446"><div class="icon-or-title"><i class="fa fa-linkedin-square" style="font-size:48px;"></i><br />LinkedIn</div></a>
                         </div>
                     </div>
                     <div class="col-sm-8 col-xs-8">
-                        <div class="cell wide-cell cell-link darken">
-                            <a href="">
+                        <div class="cell cell-2-1 darken">
+                            <a href="@Url.Action("Kanban", "Home")">
                                 <img src="~/Content/Images/kanban.png" class="img-responsive full-width">
-                                <div class="text"><i class="fa fa-tasks" style="font-size:48px;"></i><br />Kanban</div>
+                                <div class="icon-or-title"><i class="fa fa-tasks" style="font-size:48px;"></i><br />Kanban</div>
                             </a>
                         </div>
                     </div>
@@ -99,35 +99,6 @@
             </div>
 
         </div>
-    <!--
-        <div class="row">
-            <div class="col-sm-2 col-sm-offset-1">
-                <div class="cell cell-link darken">
-                    <a href=""><div class="text"></div></a>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="cell cell-link darken">
-                    <a href=""><div class="text"></div></a>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="cell cell-link darken">
-                    <a href=""><div class="text"></div></a>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="cell cell-link darken">
-                    <a href=""><div class="text"></div></a>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="cell cell-link darken">
-                    <a href=""><div class="text"></div></a>
-                </div>
-            </div>
-        </div>
-        -->
     </div>
 
 <br><br>
