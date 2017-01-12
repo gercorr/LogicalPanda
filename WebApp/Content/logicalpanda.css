@@ -1,6 +1,3 @@
-
-
-
 /*
     BOOTSTRAP Overrides
 */
@@ -28,17 +25,10 @@ body {
     border-color: white;
 }
 
-
-
 .container-fluid{
     max-width: 1000px;
     margin: 0 auto; 
 }
-
-
-
-
-
 
 a{
     color: black;
@@ -47,23 +37,21 @@ a:hover{
     color: black;
 }
 
-
 .cell{
     position:relative;
     overflow:hidden;
     padding-bottom:100%;
-    text-align:center;
-    margin: 1px;
-    background-color: white;
+    text-align:center;    
+    background-color: white;    
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .cell img{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .cell .icon-or-title{
@@ -76,37 +64,27 @@ a:hover{
     min-width: 102%;
 }
 
-
 .cell-2-1{
-        padding-bottom: 50%;
+    padding-bottom: 50%;
 }
 
 .cell-5-1{
-        padding-bottom: 20%;
+    padding-bottom: 20%;
 }
 
 .cell-2-2{
-        padding-bottom: 200%;
+    padding-bottom: 200%;
 }
 .cell-with-content{
-        padding-bottom: 5%;
+    padding-bottom: 5%;
 }
-
 
 a:visited {
     text-decoration: none;
     color: black;
 }
 
-
-.darken:hover{
+.darken:hover{    
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
-    opacity: 0.8;
-    background-color: #fcfcfc;
-    -webkit-transition: all 0.3s linear;
-       -moz-transition: all 0.3s linear;
-        -ms-transition: all 0.3s linear;
-         -o-transition: all 0.3s linear;
-            transition: all 0.3s linear;
+    background-color: lightgray;
 }
